@@ -1,4 +1,3 @@
-import random
 from scipy.spatial import distance
 
 def euc(a, b):
