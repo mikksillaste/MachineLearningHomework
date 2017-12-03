@@ -4,10 +4,10 @@ from sklearn import tree
 
 iris = load_iris()
 test_idx = [0, 50, 100]
-print(iris.feature_names)
-print(iris.target_names)
-print(iris.data[0])
-print(iris.target[0])
+#print(iris.feature_names)
+#print(iris.target_names)
+print(iris.data)
+print(iris.target)
 
 # training data
 train_target = np.delete(iris.target, test_idx)
