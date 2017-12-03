@@ -47,18 +47,18 @@ testData = getOnlyDataFromAllData(testAllData)
 trainDataTarget = getOnlyTargetFromAllData(trainAllData)
 testDataTarget = getOnlyTargetFromAllData(testAllData)
 # setting different training set size
-diffTrainData = trainData[0:100]
-diffTrainDataTarget = trainDataTarget[0:100]
+diffTrainData = trainData[0:50]
+diffTrainDataTarget = trainDataTarget[0:50]
 
 # otsustuspuu klassifitseerimine
-# my_classifier = tree.DecisionTreeClassifier()
-# my_classifier.fit(trainData, trainDataTarget)
-# prediction = my_classifier.predict(testData)
-
-# Gaussian Naive Bayes klassifitseerimine
-my_classifier = GaussianNB()
+my_classifier = tree.DecisionTreeClassifier()
 my_classifier.fit(trainData, trainDataTarget)
 prediction = my_classifier.predict(testData)
+
+# Gaussian Naive Bayes klassifitseerimine
+#my_classifier = GaussianNB()
+#my_classifier.fit(trainData, trainDataTarget)
+#prediction = my_classifier.predict(testData)
 
 print(len(diffTrainData))
 print(accuracy_score(testDataTarget, prediction))
