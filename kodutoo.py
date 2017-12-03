@@ -60,5 +60,5 @@ prediction = my_classifier.predict(testData)
 #my_classifier.fit(trainData, trainDataTarget)
 #prediction = my_classifier.predict(testData)
 
-print(len(diffTrainData))
+print(len(trainData))
 print(accuracy_score(testDataTarget, prediction))
