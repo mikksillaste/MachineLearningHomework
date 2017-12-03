@@ -1,5 +1,6 @@
 from sklearn import tree
 from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 
 
@@ -47,18 +48,23 @@ testData = getOnlyDataFromAllData(testAllData)
 trainDataTarget = getOnlyTargetFromAllData(trainAllData)
 testDataTarget = getOnlyTargetFromAllData(testAllData)
 # setting different training set size
-diffTrainData = trainData[0:50]
-diffTrainDataTarget = trainDataTarget[0:50]
+diffTrainData = trainData[0:600]
+diffTrainDataTarget = trainDataTarget[0:600]
 
 # otsustuspuu klassifitseerimine
-my_classifier = tree.DecisionTreeClassifier()
-my_classifier.fit(trainData, trainDataTarget)
-prediction = my_classifier.predict(testData)
+# my_classifier = tree.DecisionTreeClassifier()
+# my_classifier.fit(trainData, trainDataTarget)
+# prediction = my_classifier.predict(testData)
 
 # Gaussian Naive Bayes klassifitseerimine
 #my_classifier = GaussianNB()
 #my_classifier.fit(trainData, trainDataTarget)
 #prediction = my_classifier.predict(testData)
+
+# Nearest neighbour klassifitseerimine
+my_classifier = KNeighborsClassifier()
+my_classifier.fit(trainData, trainDataTarget)
+prediction = my_classifier.predict(testData)
 
 print(len(trainData))
 print(accuracy_score(testDataTarget, prediction))
