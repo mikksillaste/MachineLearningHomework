@@ -1,6 +1,7 @@
 from sklearn import tree
 from sklearn.metrics import accuracy_score
 
+
 # loeb kõik andmed
 def loadAllData(fn):
     all_data = []
@@ -32,6 +33,7 @@ def getOnlyTargetFromAllData(fulllist):
     for i in fulllist:
         targets.append(i[9])
     return targets
+
 
 # kõik andmed
 allData = loadAllData("andmed.txt")
